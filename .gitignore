@@ -1,0 +1,16 @@
+node_modules
+dist
+types
+.env
+.env.*
+!.env.sample
+.DS_STORE
+yarn-error.log
+.vscode
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+*.tgz

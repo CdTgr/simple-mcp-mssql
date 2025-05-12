@@ -1,0 +1,17 @@
+# build folders
+.clinic
+.nyc_output
+dist
+lib
+types
+
+# public
+assets
+docs
+static
+
+# custom build scripts
+buildScripts/**/*.js
+
+# custom folders
+.training

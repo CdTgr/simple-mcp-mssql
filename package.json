@@ -1,0 +1,65 @@
+{
+  "name": "simple-mcp-mssql",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "bin": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "lint": "eslint src",
+    "fix": "yarn install && run-p \"lint:prettier --write\" \"lint:eslint --fix\" \"typecheck\"",
+    "lint:prettier": "prettier \"**/*.{js,jsx,ts,tsx,css,scss,json,md,yml,html}\"",
+    "lint:eslint": "eslint \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit --project ./tsconfig.json",
+    "lint:all": "run-p \"lint:prettier --check\" \"lint:eslint\" \"typecheck\""
+  },
+  "files": [
+    "dist",
+    "types",
+    "readme.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "mssql",
+    "sql",
+    "server",
+    "database",
+    "nodejs",
+    "typescript",
+    "ai",
+    "model",
+    "modelcontextprotocol",
+    "database",
+    "sql server",
+    "sqlserver"
+  ],
+  "author": "GhosT <cd.tgr9@gmail.com>",
+  "license": "ISC",
+  "description": "Simple MCP server for MS SQL Server",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/mssql": "^9.1.7",
+    "@types/prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "dotenv": "^16.5.0",
+    "mssql": "^11.0.1",
+    "zod": "^3.24.4"
+  }
+}
