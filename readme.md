@@ -1,37 +1,51 @@
-# Simple mcp server for mssql
+# 🧩 Simple MCP Server for MSSQL
 
-A simple MCP server for conneting and querying to mssql database.
+A lightweight command-line tool for connecting to and querying Microsoft SQL Server (MSSQL) using the **Model Context Protocol (MCP)**.
 
-Utilize the tool to connect your AI to mssql.
+Use this tool to bridge your AI or context-aware systems with MSSQL databases quickly and securely.
 
-> Contributters are welcome
+> 🙌 Contributions are welcome!
 
-## Installation
+---
+
+## 🚀 Installation
+
+Install globally via npm:
 
 ```sh
 npm i -g simple-mcp-mssql
 ```
 
-### debugging
+## 🛠️ Usage & Debugging
+
+To inspect and debug your MCP server connection, use the official MCP Inspector:
 
 ```sh
 npx @modelcontextprotocol/inspector simple-mcp-mssql \
-  --password '<your password>' \
-  -d '<default db>'
+  --password '<your-password>' \
+  -d '<default-database>'
 ```
 
-### Availalbe options
+## 📘 Available Options
 
-All available option can be found by running the following command:
+You can view all CLI options by running:
 
 ```sh
 simple-mcp-mssql --help
 ```
 
-| Option   | Alias | Type   | Required | Description                     | Default   |
-| -------- | ----- | ------ | -------- | ------------------------------- | --------- |
-| host     | h     | string | No       | The host of your database       | localhost |
-| port     | p     | number | No       | The port to use                 | 1433      |
-| user     | u     | string | No       | The user to authenticate        | sa        |
-| password | P     | string | Yes      | The password to use             |           |
-| database | d     | string | Yes      | The default database to connect |           |
+| Option       | Alias | Type   | Required | Description                    | Default     |
+| ------------ | ----- | ------ | -------- | ------------------------------ | ----------- |
+| `--host`     | `-h`  | string | No       | Database host address          | `localhost` |
+| `--port`     | `-p`  | number | No       | Database port                  | `1433`      |
+| `--user`     | `-u`  | string | No       | Username for authentication    | `sa`        |
+| `--password` | `-P`  | string | Yes      | Password for the database user | _(none)_    |
+| `--database` | `-d`  | string | Yes      | Default database to connect to | _(none)_    |
+
+## 💬 Feedback & Contributions
+
+If you encounter issues, have suggestions, or want to contribute, feel free to open an [issue or pull request](https://github.com/CdTgr/simple-mcp-mssql).
+
+## 📄 License
+
+[MIT](./LICENSE) © 2025 GhosT
