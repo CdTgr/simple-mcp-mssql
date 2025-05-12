@@ -2,7 +2,7 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "rootDir": ".",
-    "types": ["types"],
+    "types": ["node"],
     "skipLibCheck": true
   },
   "include": ["**/*"]

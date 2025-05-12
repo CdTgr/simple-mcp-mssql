@@ -25,6 +25,9 @@
   "repository": {
     "url": "https://github.com/CdTgr/simple-mcp-mssql.git"
   },
+  "bugs": {
+    "url": "https://github.com/CdTgr/simple-mcp-mssql/issues"
+  },
   "type": "module",
   "files": [
     "dist",
@@ -34,23 +37,27 @@
   ],
   "keywords": [
     "mcp",
+    "model context protocol",
     "mssql",
-    "sql",
-    "server",
-    "database",
-    "nodejs",
-    "typescript",
-    "ai",
-    "model",
-    "modelcontextprotocol",
-    "database",
     "sql server",
-    "sqlserver"
+    "mssql orm",
+    "mssql model",
+    "entity modeling",
+    "database abstraction",
+    "sql abstraction",
+    "data context",
+    "typescript",
+    "nodejs",
+    "orm",
+    "mssql handler",
+    "data layer",
+    "contextual data model"
   ],
   "author": "GhosT <cd.tgr9@gmail.com>",
   "license": "MIT",
-  "description": "Simple MCP server for MS SQL Server",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "description": "Lightweight CLI and SDK for using Model Context Protocol (MCP) with MSSQL databases",
+  "packageManager": "yarn@4.5.3",
+  "preferGlobal": true,
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@tsconfig/node22": "^22.0.1",
@@ -77,5 +84,11 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./types/index.d.ts"
+    }
   }
 }
