@@ -1,20 +1,29 @@
 import sql from 'mssql'
 
-import { getBoolean } from './utils'
+export class MsConnect {
+  constructor(
+    private host: string,
+    private port: number,
+    private user: string,
+    private password?: string,
+    private database?: string,
+    private encrypt = false,
+  ) {}
 
-export const executeQuery = async (query: string, database?: string) => {
-  const pool = await sql.connect({
-    user: process.env.MS_SQL_USER,
-    password: process.env.MS_SQL_PASSWORD,
-    server: process.env.MS_SQL_HOST,
-    port: Number(process.env.MS_SQL_PORT),
-    database: database || process.env.MS_SQL_DATABASE,
-    options: {
-      encrypt: getBoolean(process.env.MS_SQL_ENCRYPTION, 'true'),
-    },
-  })
+  async executeQuery(query: string, database?: string) {
+    const pool = await sql.connect({
+      user: this.user,
+      password: this.password,
+      server: this.host,
+      port: this.port,
+      database: database || this.database,
+      options: {
+        encrypt: this.encrypt,
+      },
+    })
 
-  const result = await pool.request().query(query)
+    const result = await pool.request().query(query)
 
-  return result
+    return result
+  }
 }

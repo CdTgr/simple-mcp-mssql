@@ -6,7 +6,11 @@
   "bin": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "prepare": "npm run build",
+    "build:clean": "rm -rf dist",
+    "build:compile": "tsc --project tsconfig.build.json",
+    "build:chmod": "chmod +x dist/index.js",
+    "build": "npm run build:clean && npm run build:compile && npm run build:chmod",
     "lint": "eslint src",
     "fix": "yarn install && run-p \"lint:prettier --write\" \"lint:eslint --fix\" \"typecheck\"",
     "lint:prettier": "prettier \"**/*.{js,jsx,ts,tsx,css,scss,json,md,yml,html}\"",
@@ -14,6 +18,14 @@
     "typecheck": "tsc --noEmit --project ./tsconfig.json",
     "lint:all": "run-p \"lint:prettier --check\" \"lint:eslint\" \"typecheck\""
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/CdTgr/simple-mcp-mssql",
+  "repository": {
+    "url": "https://github.com/CdTgr/simple-mcp-mssql.git"
+  },
+  "type": "module",
   "files": [
     "dist",
     "types",
@@ -58,8 +70,12 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.11.2",
-    "dotenv": "^16.5.0",
+    "@types/yargs": "^17.0.33",
     "mssql": "^11.0.1",
+    "yargs": "^17.7.2",
     "zod": "^3.24.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
