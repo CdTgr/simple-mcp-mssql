@@ -1,18 +1,9 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
-  "include": ["src/**/*", "src/**/*.json"],
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ESNext",
-    "moduleResolution": "Node",
-    "skipLibCheck": true,
-    "declaration": true,
-    "declarationDir": "./types/",
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "rootDir": "src",
-    "resolveJsonModule": true
-  }
+    "rootDir": ".",
+    "types": ["types"],
+    "skipLibCheck": true
+  },
+  "include": ["**/*"]
 }
